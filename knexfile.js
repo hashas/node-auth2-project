@@ -1,4 +1,4 @@
-// Update with your config settings.
+// Update with your database (sqlite3) config settings.
 
 module.exports = {
 
