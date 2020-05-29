@@ -1,6 +1,7 @@
 const express = require("express")
 const helmet = require("helmet")
-// missing cors
+const cookieParser = require("cookie-parser")
+// missing cors - is it required?
 
 // import authRouter
 const authRouter = require("./auth/auth-router")
@@ -10,7 +11,9 @@ const port = process.env.port || 4000 // uppercase "port"?
 
 server.use(helmet())
 server.use(express.json())
+server.use(cookieParser())
 
+// routers middleware
 server.use("/api", authRouter)
 
 server.get("/", (req, res, next) => {
